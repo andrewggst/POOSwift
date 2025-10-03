@@ -1,9 +1,16 @@
 import Foundation
 
-class Instrutor: Pessoa {
-    var especialidade: String
+enum Especialidade {
+    case musculacao
+    case nutricao
+    case hipertrofia
+    case condicionamento
+}
 
-    init(nome: String, email: String, especialidade: String) {
+class Instrutor: Pessoa {
+    var especialidade: Especialidade
+
+    init(nome: String, email: String, especialidade: Especialidade) {
         self.especialidade = especialidade
         super.init(nome: nome, email: email)
     }

@@ -8,8 +8,8 @@ let planoMensal = PlanoMensal()
 let planoAnual = PlanoAnual()
 
 //3.
-let instrutor1 = Instrutor(nome: "Carlos Silva", email: "carlosSilva@gmail.com", especialidade: "Musculação")
-let instrutor2 = Instrutor(nome: "Maria Santos", email: "mariaSantos@gmail.com", especialidade: "Crossfit")
+let instrutor1 = Instrutor(nome: "Carlos Silva", email: "carlosSilva@gmail.com", especialidade: .musculacao)
+let instrutor2 = Instrutor(nome: "Maria Santos", email: "mariaSantos@gmail.com", especialidade: .nutricao)
 
 academiaPOO360.contratarInstrutor(instrutor1)
 academiaPOO360.contratarInstrutor(instrutor2)
@@ -20,7 +20,7 @@ let aluno2 = academiaPOO360.matricularAluno(nome: "Ana Pereira", email: "anaPere
 
 //5.
 let aulaPersonal = AulaPersonal(nome: "Musculação", instrutor: instrutor1, aluno: aluno1)
-let aulaColetiva = AulaColetiva(nome: "Crossfit", instrutor: instrutor2, capacidadeMaxima: 3)
+let aulaColetiva = AulaColetiva(nome: "Nutrição", instrutor: instrutor2, capacidadeMaxima: 3)
 
 academiaPOO360.adicionarAula(aulaPersonal)
 academiaPOO360.adicionarAula(aulaColetiva)
@@ -52,13 +52,6 @@ for i in 0..<pessoas.count {
 
 //9.
 extension Academia {
-    /*
-    func gerarRelatorio() -> (totalAlunos: Int, totalInstrutores: Int, totalaulas: Int) {
-        return (self.alunosMatriculados.count, self.instrutoresContratados.count, self.aulasDisponiveis.count)
-    }
-    //Pelo que entendi do enunciado, a função ficaria como a acima. Porém, os atributos da classe Academia
-    //são privados, então não seria possível acessá-los daqui. Por isso, criei os métodos getTotal...
-    */
     func gerarRelatorio(academia: Academia) -> (totalAlunos: Int, totalInstrutores: Int, totalaulas: Int) {
         return (academia.getTotalAlunos(), academia.getTotalInstrutores(), academia.getTotalAulas())
     }
