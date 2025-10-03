@@ -1,4 +1,3 @@
-
 class AulaColetiva: Aula {
     private(set) var alunosInscritos: [String: Aluno]
     var capacidadeMaxima: Int
