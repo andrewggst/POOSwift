@@ -1,5 +1,11 @@
 import Foundation
 
+enum NivelAluno {
+    case iniciante
+    case intermediario
+    case avancado
+}
+
 class Aluno: Pessoa {
     let matricula: String
     var nivel: NivelAluno = .iniciante
@@ -14,10 +20,4 @@ class Aluno: Pessoa {
     override func getDescricao() -> String {
         return "Aluno(a): \(super.nome)\nMatrícula: \(self.matricula)\nPlano: \(plano.tipoPlano) - \(plano.duracaoPlano)\nMensalidade: R$\(plano.calcularMensalidade())"
     }
-}
-
-enum NivelAluno {
-    case iniciante
-    case intermediario
-    case avancado
 }
